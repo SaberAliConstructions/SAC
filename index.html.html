@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saber Ali | Construction, Marble Supplies & Finishing Works | مكتب صابر علي</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#d97706',
+              goldHover: '#b45309',
+              goldLight: '#f59e0b',
+              darkBg: '#0b0f17',
+              darkCard: '#151c2c',
+              darkBorder: '#232f48'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Google Fonts for English and Arabic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', 'Cairo', sans-serif;
+    }
+    html[dir="rtl"] body {
+      font-family: 'Cairo', 'Plus Jakarta Sans', sans-serif;
+    }
+    .glass-card {
+      background: rgba(21, 28, 44, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(217, 119, 6, 0.18);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #fef3c7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .lightbox {
+      transition: opacity 0.3s ease;
+    }
+  </style>
+</head>
+<body class="bg-[#0b0f17] text-slate-100 transition-colors duration-300">
+
+  <!-- Floating WhatsApp CTA -->
+  <a href="https://wa.me/201207663456?text=Hello%20Saber%20Ali%20Constructions,%20I%20would%20like%20to%20inquire%20about%20your%20services." 
+     target="_blank" 
+     class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-2xl transition-transform hover:scale-110"
+     title="Chat on WhatsApp / تواصل عبر الواتساب">
+    <i class="fab fa-whatsapp text-3xl"></i>
+  </a>
+
+  <!-- Navigation Header -->
+  <header class="sticky top-0 z-40 w-full border-b border-slate-800 bg-[#0b0f17]/90 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-slate-950 font-black text-lg shadow-lg shadow-amber-500/20">
+          <i class="fas fa-building text-lg"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl font-extrabold tracking-tight text-white uppercase" data-en="Saber Ali" data-ar="مكتب صابر علي">Saber Ali</span>
+          <span class="text-xs text-amber-500 font-semibold tracking-widest uppercase" data-en="Constructions & Finishing" data-ar="للمقاولات والديكور والتشطيبات">Constructions & Finishing</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-6 rtl:space-x-reverse text-sm font-medium">
+        <a href="#about" class="hover:text-amber-500 transition-colors" data-en="About Us" data-ar="من نحن">About Us</a>
+        <a href="#services" class="hover:text-amber-500 transition-colors" data-en="Services" data-ar="خدماتنا">Services</a>
+        <a href="#projects" class="hover:text-amber-500 transition-colors" data-en="Projects" data-ar="مشروعاتنا">Projects</a>
+        <a href="#gallery" class="hover:text-amber-500 transition-colors" data-en="Gallery" data-ar="معرض الأعمال">Gallery</a>
+        <a href="#contact" class="hover:text-amber-500 transition-colors" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+      </nav>
+
+      <!-- Language Toggle & Action Header Buttons -->
+      <div class="flex items-center gap-3">
+        <!-- Language Switcher Button -->
+        <button onclick="toggleLanguage()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-400 border border-slate-700 text-xs font-bold transition-all flex items-center gap-2">
+          <i class="fas fa-globe"></i>
+          <span id="langLabel">العربية</span>
+        </button>
+
+        <!-- Facebook Icon -->
+        <a href="https://www.facebook.com/share/1FWzokqU1A/" target="_blank" class="hidden sm:flex w-9 h-9 rounded-lg bg-slate-800 hover:bg-amber-500 hover:text-slate-950 items-center justify-center transition-all" title="Facebook Page">
+          <i class="fab fa-facebook-f text-sm"></i>
+        </a>
+
+        <!-- Call/WhatsApp CTA -->
+        <a href="https://wa.me/201207663456" target="_blank" class="hidden lg:flex bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg text-xs font-bold transition-all shadow-lg shadow-amber-600/20 items-center gap-2">
+          <i class="fab fa-whatsapp text-base"></i>
+          +20 120 766 3456
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="menuBtn" class="md:hidden text-slate-300 hover:text-amber-500 p-2">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-b border-slate-800 bg-[#0b0f17] px-6 py-4 space-y-4">
+      <a href="#about" class="block text-slate-300 hover:text-amber-500 font-medium" data-en="About Us" data-ar="من نحن">About Us</a>
+      <a href="#services" class="block text-slate-300 hover:text-amber-500 font-medium" data-en="Services" data-ar="خدماتنا">Services</a>
+      <a href="#projects" class="block text-slate-300 hover:text-amber-500 font-medium" data-en="Projects" data-ar="مشروعاتنا">Projects</a>
+      <a href="#gallery" class="block text-slate-300 hover:text-amber-500 font-medium" data-en="Gallery" data-ar="معرض الأعمال">Gallery</a>
+      <a href="#contact" class="block text-slate-300 hover:text-amber-500 font-medium" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+      <div class="pt-4 border-t border-slate-800 flex flex-col gap-3">
+        <a href="https://wa.me/201207663456" target="_blank" class="w-full text-center bg-amber-600 text-white py-2.5 rounded-lg font-semibold text-sm">
+          <i class="fab fa-whatsapp mr-2"></i> WhatsApp: +20 120 766 3456
+        </a>
+        <a href="https://www.facebook.com/share/1FWzokqU1A/" target="_blank" class="w-full text-center bg-blue-600 text-white py-2.5 rounded-lg font-semibold text-sm">
+          <i class="fab fa-facebook-f mr-2"></i> Facebook Page
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80" alt="Architectural Interior" class="w-full h-full object-cover object-center opacity-25">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f17] via-[#0b0f17]/80 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-6">
+        <i class="fas fa-award"></i> 
+        <span data-en="Best Upper Start-up in Constructions & Finishing" data-ar="أفضل شركة صاعدة في المقاولات والديكور والتشطيبات">Best Upper Start-up in Constructions & Finishing</span>
+      </div>
+      
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6 leading-tight">
+        <span data-en="Saber Ali" data-ar="مكتب صابر علي">Saber Ali</span>
+        <span class="block text-2xl sm:text-4xl lg:text-5xl font-bold text-amber-500 mt-2" data-en="Constructions, Marble Supplies & Finishing" data-ar="للمقاولات والتوريدات وتشطيبات الرخام والديكور">Constructions, Marble Supplies & Finishing</span>
+      </h1>
+
+      <p class="text-lg sm:text-xl text-slate-300 mb-10 max-w-3xl mx-auto font-light leading-relaxed" 
+         data-en="We design, finish, model, and remodel all types of constructions. Specialists in high-grade marble supplies, ceramic flooring, interior decoration, and turnkey construction."
+         data-ar="نقوم بتصميم وتشطيب وتصميم نماذج وإعادة هيكلة كافة أنواع الإنشاءات. متخصصون في توريدات وتركيبات الرخام الفاخر، السيراميك، الديكورات الداخلية والتشطيبات المتكاملة.">
+        We design, finish, model, and remodel all types of constructions. Specialists in high-grade marble supplies, ceramic flooring, interior decoration, and turnkey construction.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-amber-600 hover:bg-amber-700 text-white text-base font-bold rounded-xl shadow-xl shadow-amber-600/30 transition-all hover:scale-105 flex items-center justify-center gap-3">
+          <i class="fas fa-paper-plane"></i> 
+          <span data-en="Request Quote / Contact" data-ar="تواصل معنا / طلب عرض سعر">Request Quote / Contact</span>
+        </a>
+        <a href="#projects" class="w-full sm:w-auto px-8 py-4 bg-slate-800/80 hover:bg-slate-800 text-white text-base font-bold rounded-xl border border-slate-700 transition-all hover:scale-105 flex items-center justify-center gap-3">
+          <i class="fas fa-building"></i> 
+          <span data-en="Featured Projects" data-ar="مشروعاتنا البارزة">Featured Projects</span>
+        </a>
+      </div>
+
+      <!-- Highlights Banner -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-10 border-t border-slate-800/80">
+        <div class="glass-card p-4 rounded-xl">
+          <div class="text-2xl font-black text-amber-500">5+</div>
+          <div class="text-xs text-slate-400 mt-1" data-en="Major Megaprojects" data-ar="مشروعات كبرى معتمدة">Major Megaprojects</div>
+        </div>
+        <div class="glass-card p-4 rounded-xl">
+          <div class="text-2xl font-black text-amber-500">100%</div>
+          <div class="text-xs text-slate-400 mt-1" data-en="Marble Craftsmanship" data-ar="جودة الرخام والديكور">Marble Craftsmanship</div>
+        </div>
+        <div class="glass-card p-4 rounded-xl">
+          <div class="text-2xl font-black text-amber-500">Sawari & Muruj</div>
+          <div class="text-xs text-slate-400 mt-1" data-en="Prime Works Sites" data-ar="مواقع عمل تنفيذية">Prime Works Sites</div>
+        </div>
+        <div class="glass-card p-4 rounded-xl">
+          <div class="text-2xl font-black text-amber-500">Top Rated</div>
+          <div class="text-xs text-slate-400 mt-1" data-en="Construction Startup" data-ar="جائزة أفضل شركة صاعدة">Construction Startup</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-slate-800/60 max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="text-amber-500 text-sm font-extrabold uppercase tracking-widest" data-en="About Saber Ali" data-ar="عن مكتب صابر علي">About Saber Ali</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-6" data-en="Mastery in Design, Finishing & Marble Works" data-ar="الريادة في التصميم والتشطيبات وتوريدات الرخام">
+          Mastery in Design, Finishing & Marble Works
+        </h2>
+        <p class="text-slate-300 leading-relaxed mb-4" 
+           data-en="Saber Ali is a award-winning construction firm recognized as the 'Best Upper Start-up in Constructions'. We design, finish, model, and remodel all types of constructions, commercial complexes, and private residences."
+           data-ar="مكتب صابر علي هو مؤسسة رائدة حائزة على لقب 'أفضل شركة صاعدة في المقاولات والإنشاءات'. نقوم بتصميم وتشطيب ونمذجة وإعادة هيكلة جميع أنواع الإنشاءات والمجمعات السكنية والتجارية.">
+          Saber Ali is a award-winning construction firm recognized as the "Best Upper Start-up in Constructions". We design, finish, model, and remodel all types of constructions, commercial complexes, and private residences.
+        </p>
+        <p class="text-slate-400 leading-relaxed mb-6" 
+           data-en="Our skilled team specializes in supplying high-end Egyptian and imported marble, precision ceramic flooring installation, interior decor, 3D modeling, and turnkey finishing works for major landmark developments."
+           data-ar="يتخصص فريقنا في توريد وتركيب أفخم أنواع الرخام المصري والمستورد، أعمال أرضيات السيراميك والبورسلين، الديكورات الداخلية والنمذجة ثلاثية الأبعاد، والتشطيبات الكاملة للمشروعات الكبرى.">
+          Our skilled team specializes in supplying high-end Egyptian and imported marble, precision ceramic flooring installation, interior decor, 3D modeling, and turnkey finishing works for major landmark developments.
+        </p>
+
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 text-slate-200">
+            <i class="fas fa-check-circle text-amber-500"></i>
+            <span data-en="Full Turnkey Design, Modeling & Remodeling" data-ar="التصميم والنمذجة وإعادة الهيكلة المتكاملة">Full Turnkey Design, Modeling & Remodeling</span>
+          </div>
+          <div class="flex items-center gap-3 text-slate-200">
+            <i class="fas fa-check-circle text-amber-500"></i>
+            <span data-en="Premium Egyptian & Imported Marble Supplies" data-ar="توريدات وتركيبات الرخام المصري والمستورد">Premium Egyptian & Imported Marble Supplies</span>
+          </div>
+          <div class="flex items-center gap-3 text-slate-200">
+            <i class="fas fa-check-circle text-amber-500"></i>
+            <span data-en="High-Precision Ceramic Flooring & Interior Decorations" data-ar="أرضيات السيراميك والبورسلين والديكورات الحديثة">High-Precision Ceramic Flooring & Interior Decorations</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="aspect-4/3 rounded-2xl overflow-hidden shadow-2xl border border-slate-700">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80" alt="Marble Finishing Work" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute -bottom-6 -left-6 glass-card p-6 rounded-2xl border border-amber-500/30 max-w-xs hidden sm:block">
+          <div class="flex items-center gap-4">
+            <div class="p-3 bg-amber-500/20 text-amber-500 rounded-xl">
+              <i class="fas fa-trophy text-2xl"></i>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white" data-en="Award Winner" data-ar="جائزة التميز">Award Winner</div>
+              <div class="text-xs text-slate-400" data-en="Best Upper Start-up in Constructions" data-ar="أفضل شركة صاعدة في المقاولات">Best Upper Start-up in Constructions</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Services Grid -->
+  <section id="services" class="py-20 bg-slate-900/50 border-t border-slate-800 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-amber-500 text-sm font-bold uppercase tracking-widest" data-en="What We Offer" data-ar="خدماتنا التخصصية">What We Offer</span>
+        <h2 class="text-3xl sm:text-5xl font-black text-white mt-2 mb-4" data-en="Comprehensive Construction & Finishing" data-ar="خدمات المقاولات والديكور والتشطيبات المتكاملة">Comprehensive Construction & Finishing</h2>
+        <p class="text-slate-400" data-en="We provide end-to-end solutions for all types of construction, marble supplies, tiling, and interior design." data-ar="نقدم حلولاً شاملاً لكافة أنواع الإنشاءات وتوريدات الرخام وأرضيات السيراميك والديكورات.">We provide end-to-end solutions for all types of construction, marble supplies, tiling, and interior design.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service 1: Architectural Design -->
+        <div class="glass-card p-8 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all group">
+          <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all">
+            <i class="fas fa-[#e06d53] fa-pencil-ruler"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3" data-en="Architectural Design" data-ar="التصميم المعماري">Architectural Design</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4" data-en="Custom floor plans, structural drafting, and modern space concepts tailored for all construction types." data-ar="تصميم المخططات الهندسية والمساحات الحديثة لكافة أنواع المباني والإنشاءات.">
+            Custom floor plans, structural drafting, and modern space concepts tailored for all construction types.
+          </p>
+        </div>
+
+        <!-- Service 2: Marble Supplies & Craftsmanship -->
+        <div class="glass-card p-8 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all group">
+          <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all">
+            <i class="fas fa-[#e06d53] fa-gem"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3" data-en="Marble Supplies & Craftsmanship" data-ar="توريدات وتركيبات الرخام">Marble Supplies & Craftsmanship</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4" data-en="Direct sourcing, precision cutting, mirror polishing, and professional installation of premium marble for floors, stairs, and facades." data-ar="توريد وقطع وتلميع وتركيب أجود أنواع الرخام للأرضيات والسلالم والواجهات بمستوى احترافي.">
+            Direct sourcing, precision cutting, mirror polishing, and professional installation of premium marble for floors, stairs, and facades.
+          </p>
+        </div>
+
+        <!-- Service 3: Ceramic & Porcelain Flooring -->
+        <div class="glass-card p-8 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all group">
+          <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all">
+            <i class="fas fa-[#e06d53] fa-border-all"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3" data-en="Ceramic & Porcelain Flooring" data-ar="أرضيات السيراميك والبورسلين">Ceramic & Porcelain Flooring</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4" data-en="Laser-guided tiling and flooring installation for large porcelain slabs, ceramics, and intricate floor patterns." data-ar="تركيب أرضيات السيراميك والبورسلين بموازاة الليزر بدقة متناهية للمساحات الكبيرة والمجمعات.">
+            Laser-guided tiling and flooring installation for large porcelain slabs, ceramics, and intricate floor patterns.
+          </p>
+        </div>
+
+        <!-- Service 4: General Finishing Works -->
+        <div class="glass-card p-8 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all group">
+          <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all">
+            <i class="fas fa-[#e06d53] fa-paint-roller"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3" data-en="General Finishing Works" data-ar="أعمال التشطيبات العامة">General Finishing Works</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4" data-en="Turnkey interior finishing including painting, plastering, electrical, plumbing, and false ceiling installations." data-ar="تشطيبات متكاملة تشمل الدهانات والسباكة والكهرباء والأسقف المعلقة بدقة عالية.">
+            Turnkey interior finishing including painting, plastering, electrical, plumbing, and false ceiling installations.
+          </p>
+        </div>
+
+        <!-- Service 5: 3D Modeling & Visualization -->
+        <div class="glass-card p-8 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all group">
+          <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all">
+            <i class="fas fa-[#e06d53] fa-cube"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3" data-en="3D Modeling & Visualization" data-ar="النمذجة والمنظور ثلاثي الأبعاد">3D Modeling & Visualization</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4" data-en="High-definition 3D rendering and realistic interior & exterior visual representations prior to execution." data-ar="إعداد نماذج ومناظير ثلاثية الأبعاد واقعية للمشروعات قبل بدء التنفيذ لضمان أدق التفاصيل.">
+            High-definition 3D rendering and realistic interior & exterior visual representations prior to execution.
+          </p>
+        </div>
+
+        <!-- Service 6: Building Remodeling & Renovations -->
+        <div class="glass-card p-8 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all group">
+          <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all">
+            <i class="fas fa-[#e06d53] fa-hammer"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3" data-en="Remodeling & Construction" data-ar="إعادة الهيكلة والتطوير المعماري">Remodeling & Construction</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4" data-en="Structural expansion, commercial space remodeling, structural repair, and building modernizations." data-ar="إعادة التشكيل الهيكلي والتوسعات وتطوير المباني التجارية والسكنية القديمة بأحدث المعايير.">
+            Structural expansion, commercial space remodeling, structural repair, and building modernizations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Major Projects Portfolio Section -->
+  <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-amber-500 text-sm font-bold uppercase tracking-widest" data-en="Key Achievements" data-ar="سجل المشروعات الإستراتيجية">Key Achievements</span>
+      <h2 class="text-3xl sm:text-5xl font-black text-white mt-2 mb-4" data-en="Landmark Projects Portfolio" data-ar="مشروعاتنا الكبرى">Landmark Projects Portfolio</h2>
+      <p class="text-slate-400" data-en="Saber Ali takes pride in executing premium finishing, marble, ceramic, and structural works for prestigious developments." data-ar="نفخر في مكتب صابر علي بتنفيذ أعمال التشطيبات والرخام والسيراميك والإنشاءات لأبرز المشروعات الإستراتيجية.">
+        Saber Ali takes pride in executing premium finishing, marble, ceramic, and structural works for prestigious developments.
+      </p>
+    </div>
+
+    <!-- 5 Projects Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Project 1: Muruj -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-amber-500/50 transition-all flex flex-col justify-between">
+        <div class="relative aspect-16/9 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Muruj Project" class="w-full h-full object-cover">
+          <div class="absolute top-3 left-3 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full">Residential & Commercial</div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-extrabold text-white mb-2" data-en="Muruj Project" data-ar="مشروع مروج">Muruj Project</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4" 
+             data-en="Execution of general finishing works, high-grade marble supply, and precision ceramic flooring across premier residential blocks."
+             data-ar="تنفيذ أعمال التشطيبات العامة وتوريد وتركيب الرخام الفاخر وأرضيات السيراميك للمجمعات السكنية بالمشروع.">
+            Execution of general finishing works, high-grade marble supply, and precision ceramic flooring across premier residential blocks.
+          </p>
+        </div>
+        <div class="px-6 pb-6 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs text-amber-400 font-semibold">
+          <span data-en="Finishing & Marble Works" data-ar="أعمال التشطيبات والرخام">Finishing & Marble Works</span>
+          <i class="fas fa-check-circle"></i>
+        </div>
+      </div>
+
+      <!-- Project 2: AboQear Harbor -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-amber-500/50 transition-all flex flex-col justify-between">
+        <div class="relative aspect-16/9 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80" alt="AboQear Harbor" class="w-full h-full object-cover">
+          <div class="absolute top-3 left-3 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full">Infrastructure & Maritime</div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-extrabold text-white mb-2" data-en="AboQear Harbor" data-ar="مشروع ميناء أبو قير">AboQear Harbor</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4" 
+             data-en="Specialized structural modeling, heavy-duty paving, administrative finishing, and specialized tile installations for harbor facilities."
+             data-ar="أعمال نمذجة الإنشاءات المتخصصة والتبليطات والتشطيبات للمباني الإدارية بالميناء.">
+            Specialized structural modeling, heavy-duty paving, administrative finishing, and specialized tile installations for harbor facilities.
+          </p>
+        </div>
+        <div class="px-6 pb-6 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs text-amber-400 font-semibold">
+          <span data-en="Structural & Admin Works" data-ar="إنشاءات وتشطيبات إدارية">Structural & Admin Works</span>
+          <i class="fas fa-check-circle"></i>
+        </div>
+      </div>
+
+      <!-- Project 3: Sawari Project -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-amber-500/50 transition-all flex flex-col justify-between">
+        <div class="relative aspect-16/9 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Sawari Project" class="w-full h-full object-cover">
+          <div class="absolute top-3 left-3 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full">Luxury Compound</div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-extrabold text-white mb-2" data-en="Sawari Project" data-ar="مشروع صواري">Sawari Project</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4" 
+             data-en="High-end villa interior decorations, imported marble entrance halls, 3D architectural modeling, and ceramic flooring execution."
+             data-ar="تشطيبات وتصميمات الفيلات الفاخرة ومدخل الرخام الفاخر والنمذجة ثلاثية الأبعاد وأرضيات البورسلين.">
+            High-end villa interior decorations, imported marble entrance halls, 3D architectural modeling, and ceramic flooring execution.
+          </p>
+        </div>
+        <div class="px-6 pb-6 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs text-amber-400 font-semibold">
+          <span data-en="Luxury Villa Decor & Marble" data-ar="تشطيبات ورخام فاخر">Luxury Villa Decor & Marble</span>
+          <i class="fas fa-check-circle"></i>
+        </div>
+      </div>
+
+      <!-- Project 4: Smouha Club -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-amber-500/50 transition-all flex flex-col justify-between">
+        <div class="relative aspect-16/9 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Smouha Club" class="w-full h-full object-cover">
+          <div class="absolute top-3 left-3 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full">Sports & Recreation</div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-extrabold text-white mb-2" data-en="Smouha Club" data-ar="مشروع نادي سموحة">Smouha Club</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4" 
+             data-en="Remodeling, sports facility tiling, wet-area ceramic waterproofing, entrance hall marble cladding, and general decorations."
+             data-ar="تطوير وإعادة هيكلة المباني وأرضيات السيراميك والمناطق المائية وتكسيات الرخام لمداخل النادي.">
+            Remodeling, sports facility tiling, wet-area ceramic waterproofing, entrance hall marble cladding, and general decorations.
+          </p>
+        </div>
+        <div class="px-6 pb-6 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs text-amber-400 font-semibold">
+          <span data-en="Remodeling & Tiling" data-ar="تطوير وأرضيات مائية">Remodeling & Tiling</span>
+          <i class="fas fa-check-circle"></i>
+        </div>
+      </div>
+
+      <!-- Project 5: GTC -->
+      <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-amber-500/50 transition-all flex flex-col justify-between">
+        <div class="relative aspect-16/9 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="GTC Project" class="w-full h-full object-cover">
+          <div class="absolute top-3 left-3 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full">Commercial Headquarters</div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-extrabold text-white mb-2" data-en="GTC Complex" data-ar="مشروع GTC">GTC Complex</h3>
+          <p class="text-slate-300 text-sm leading-relaxed mb-4" 
+             data-en="Commercial turnkey finishing, acoustic false ceilings, large-format porcelain floor installations, and decorative facade work."
+             data-ar="التشطيبات المتكاملة للمباني التجارية وأرضيات البورسلين الكبيرة والديكورات الحديثة للمكاتب.">
+            Commercial turnkey finishing, acoustic false ceilings, large-format porcelain floor installations, and decorative facade work.
+          </p>
+        </div>
+        <div class="px-6 pb-6 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs text-amber-400 font-semibold">
+          <span data-en="Commercial Turnkey Finishing" data-ar="تشطيبات تجارية متكاملة">Commercial Turnkey Finishing</span>
+          <i class="fas fa-check-circle"></i>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Photo Gallery Section -->
+  <section id="gallery" class="py-20 bg-slate-900/40 border-t border-slate-800 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-amber-500 text-sm font-bold uppercase tracking-widest" data-en="Visual Showcase" data-ar="المعرض البصري">Visual Showcase</span>
+        <h2 class="text-3xl sm:text-5xl font-black text-white mt-2 mb-4" data-en="Finishing, Marble & Tile Showcase" data-ar="معرض أعمال الرخام والديكور">Finishing, Marble & Tile Showcase</h2>
+        <p class="text-slate-400" data-en="Click on any work image to expand the high-resolution lightbox view." data-ar="اضغط على أي صورة لعرضها بالحجم الكامل والتفاصيل.">Click on any work image to expand the high-resolution lightbox view.</p>
+
+        <!-- Category Filters -->
+        <div class="flex flex-wrap justify-center gap-3 mt-8">
+          <button onclick="filterGallery('all')" class="gallery-tab active px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-amber-600 text-white transition-all" data-en="All Works" data-ar="جميع الأعمال">All Works</button>
+          <button onclick="filterGallery('marble')" class="gallery-tab px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all" data-en="Marble & Ceramics" data-ar="الرخام والسيراميك">Marble & Ceramics</button>
+          <button onclick="filterGallery('decor')" class="gallery-tab px-5 py-2 rounded-full text-xs sm:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all" data-en="Decorations & Finishing" data-ar="الديكورات والتشطيب">Decorations & Finishing</button>
+        </div>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="gallery-item marble group relative rounded-2xl overflow-hidden aspect-4/3 border border-slate-800 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80', 'Italian Marble Hallway Flooring')">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Marble Flooring" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+            <span class="text-amber-400 text-xs font-bold uppercase">Marble Works</span>
+            <h4 class="text-white font-bold text-lg">Italian Marble Hallway Flooring</h4>
+          </div>
+        </div>
+
+        <div class="gallery-item marble group relative rounded-2xl overflow-hidden aspect-4/3 border border-slate-800 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=80', 'Laser Level Porcelain Bathroom Tiling')">
+          <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Ceramic Flooring" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+            <span class="text-amber-400 text-xs font-bold uppercase">Ceramic Flooring</span>
+            <h4 class="text-white font-bold text-lg">Laser Level Porcelain Tiling</h4>
+          </div>
+        </div>
+
+        <div class="gallery-item decor group relative rounded-2xl overflow-hidden aspect-4/3 border border-slate-800 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=80', 'Modern Living Room Decor & Wall Paneling')">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" alt="Interior Decoration" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+            <span class="text-amber-400 text-xs font-bold uppercase">Decorations</span>
+            <h4 class="text-white font-bold text-lg">Modern Wall Decor & Lighting</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Contact Section -->
+  <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-800">
+    <div class="grid lg:grid-cols-2 gap-12">
+      
+      <div>
+        <span class="text-amber-500 text-sm font-bold uppercase tracking-widest" data-en="Connect With Us" data-ar="تواصل معنا اليوم">Connect With Us</span>
+        <h2 class="text-3xl sm:text-5xl font-black text-white mt-2 mb-6" data-en="Contact Saber Ali" data-ar="اتصل بمكتب صابر علي">Contact Saber Ali</h2>
+        <p class="text-slate-300 mb-8 leading-relaxed" 
+           data-en="For consultations regarding marble supplies, ceramic flooring, general finishing, 3D modeling, or construction projects, reach out directly."
+           data-ar="للاستفسارات واستشارات توريدات الرخام وأرضيات السيراميك والتشطيبات العامة والنمذجة المعمارية، تواصل معنا مباشرة.">
+          For consultations regarding marble supplies, ceramic flooring, general finishing, 3D modeling, or construction projects, reach out directly.
+        </p>
+
+        <div class="space-y-6">
+          <!-- WhatsApp Contact -->
+          <a href="https://wa.me/201207663456" target="_blank" class="flex items-center gap-4 glass-card p-5 rounded-2xl border border-slate-800 hover:border-green-500/50 transition-all group">
+            <div class="w-12 h-12 rounded-xl bg-green-500/10 text-green-500 flex items-center justify-center text-2xl group-hover:bg-green-500 group-hover:text-white transition-all">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <div>
+              <div class="text-xs text-slate-400 uppercase font-semibold" data-en="WhatsApp & Phone Calls" data-ar="الواتساب والاتصالات المباشرة">WhatsApp & Phone Calls</div>
+              <div class="text-lg font-bold text-white">+20 120 766 3456</div>
+            </div>
+          </a>
+
+          <!-- Facebook Official Page -->
+          <a href="https://www.facebook.com/share/1FWzokqU1A/" target="_blank" class="flex items-center gap-4 glass-card p-5 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition-all group">
+            <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center text-2xl group-hover:bg-blue-500 group-hover:text-white transition-all">
+              <i class="fab fa-facebook-f"></i>
+            </div>
+            <div>
+              <div class="text-xs text-slate-400 uppercase font-semibold" data-en="Official Facebook Page" data-ar="الصفحة الرسمية على فيسبوك">Official Facebook Page</div>
+              <div class="text-lg font-bold text-white" data-en="Saber Ali Constructions" data-ar="مكتب صابر علي للمقاولات">Saber Ali Constructions</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Message Form -->
+      <div class="glass-card p-8 rounded-3xl border border-slate-800">
+        <h3 class="text-2xl font-extrabold text-white mb-2" data-en="Send Instant Inquiry" data-ar="إرسال طلب استفسار">Send Instant Inquiry</h3>
+        <p class="text-slate-400 text-sm mb-6" data-en="Fill out your project requirements to send directly to our WhatsApp." data-ar="قم بملء البيانات التالية لإرسال تفاصيل مشروعك عبر الواتساب.">Fill out your project requirements to send directly to our WhatsApp.</p>
+
+        <form id="contactForm" class="space-y-4" onsubmit="sendToWhatsApp(event)">
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2" data-en="Your Name" data-ar="الاسم الكريم">Your Name</label>
+            <input type="text" id="custName" required placeholder="Full Name" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500 text-sm">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2" data-en="Service Needed" data-ar="الخدمة المطلوبة">Service Needed</label>
+            <select id="custService" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500 text-sm">
+              <option value="Marble Supplies & Craftsmanship">Marble Supplies & Craftsmanship</option>
+              <option value="Ceramic & Porcelain Flooring">Ceramic & Porcelain Flooring</option>
+              <option value="General Finishing Works">General Finishing Works</option>
+              <option value="Architectural Design & 3D Modeling">Architectural Design & 3D Modeling</option>
+              <option value="Remodeling & Construction">Remodeling & Construction</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2" data-en="Project Scope / Details" data-ar="تفاصيل المشروع والمساحة">Project Scope / Details</label>
+            <textarea id="custMsg" rows="4" required placeholder="Describe location, space area (sqm), and specifications..." class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500 text-sm"></textarea>
+          </div>
+
+          <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 rounded-xl shadow-xl shadow-amber-600/20 transition-all flex items-center justify-center gap-2">
+            <i class="fab fa-whatsapp text-lg"></i> 
+            <span data-en="Send via WhatsApp" data-ar="إرسال مباشرة عبر الواتساب">Send via WhatsApp</span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightboxModal" class="fixed inset-0 z-50 bg-slate-950/95 hidden items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-slate-400 hover:text-white text-3xl">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="max-w-4xl w-full text-center">
+      <img id="lightboxImg" src="" alt="Work Preview" class="max-h-[80vh] mx-auto rounded-xl shadow-2xl border border-slate-800">
+      <h3 id="lightboxTitle" class="text-white font-bold text-lg mt-4"></h3>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-[#070a10] py-10 px-4 sm:px-6 lg:px-8 text-slate-400 text-sm">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded bg-amber-500 text-slate-950 font-black flex items-center justify-center text-sm">
+          <i class="fas fa-building"></i>
+        </div>
+        <span class="text-white font-bold" data-en="Saber Ali Constructions" data-ar="مكتب صابر علي للمقاولات والديكور">Saber Ali Constructions</span>
+      </div>
+      
+      <p class="text-xs text-slate-500">&copy; Saber Ali Constructions & Finishing. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Language Switcher & Interactive Scripts -->
+  <script>
+    let currentLang = 'en';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'ar' : 'en';
+      const html = document.documentElement;
+      const langLabel = document.getElementById('langLabel');
+
+      if (currentLang === 'ar') {
+        html.setAttribute('dir', 'rtl');
+        html.setAttribute('lang', 'ar');
+        langLabel.innerText = 'English';
+      } else {
+        html.setAttribute('dir', 'ltr');
+        html.setAttribute('lang', 'en');
+        langLabel.innerText = 'العربية';
+      }
+
+      // Update text nodes with data attributes
+      const elements = document.querySelectorAll('[data-en][data-ar]');
+      elements.forEach(el => {
+        el.innerText = el.getAttribute(`data-${currentLang}`);
+      });
+    }
+
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Gallery Filter Logic
+    function filterGallery(category) {
+      const items = document.querySelectorAll('.gallery-item');
+      const tabs = document.querySelectorAll('.gallery-tab');
+
+      tabs.forEach(tab => {
+        tab.classList.remove('bg-amber-600', 'text-white');
+        tab.classList.add('bg-slate-800', 'text-slate-300');
+      });
+
+      event.target.classList.remove('bg-slate-800', 'text-slate-300');
+      event.target.classList.add('bg-amber-600', 'text-white');
+
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Lightbox Modal Logic
+    const modal = document.getElementById('lightboxModal');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+
+    function openLightbox(imgSrc, title) {
+      lightboxImg.src = imgSrc;
+      lightboxTitle.innerText = title;
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        modal.classList.add('flex', 'opacity-100');
+      }, 10);
+    }
+
+    function closeLightbox() {
+      modal.classList.remove('opacity-100');
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+      }, 300);
+    }
+
+    // Direct WhatsApp Message Submission
+    function sendToWhatsApp(e) {
+      e.preventDefault();
+      const name = document.getElementById('custName').value;
+      const service = document.getElementById('custService').value;
+      const msg = document.getElementById('custMsg').value;
+
+      const text = `Hello Saber Ali Constructions,%0A%0AName: ${encodeURIComponent(name)}%0ARequired Service: ${encodeURIComponent(service)}%0ADetails: ${encodeURIComponent(msg)}`;
+      window.open(`https://wa.me/201207663456?text=${text}`, '_blank');
+    }
+  </script>
+</body>
+</html>
